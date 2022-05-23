@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Input from '../components/Input';
-import { actionUserEmail } from '../actions';
+import { actionUserEmail } from '../store/actions';
 
 class Login extends React.Component {
   constructor() {
@@ -48,7 +48,6 @@ class Login extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <Input
-          dataTestId="email-input"
           type="email"
           name="email"
           onChange={this.handleChange}
@@ -56,7 +55,6 @@ class Login extends React.Component {
           required
         />
         <Input
-          dataTestId="password-input"
           type="text"
           name="password"
           onChange={this.handleChange}

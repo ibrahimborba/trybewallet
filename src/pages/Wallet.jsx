@@ -9,7 +9,7 @@ import {
   actionFetchCurrRate,
   actionDelExpense,
   actionEditExpense,
-} from '../actions';
+} from '../store/actions';
 
 const INITIAL_STATE = {
   id: 0,
