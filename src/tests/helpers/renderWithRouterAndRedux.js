@@ -10,11 +10,9 @@ const renderWithRouterAndRedux = (
   component,
   {
     initialState = {},
-
     store = createStore(rootReducer, initialState),
 
     initialEntries = ['/'],
-
     history = createMemoryHistory({ initialEntries }),
   } = {},
 ) => ({

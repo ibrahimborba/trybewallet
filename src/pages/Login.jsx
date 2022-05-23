@@ -52,6 +52,7 @@ class Login extends React.Component {
           name="email"
           onChange={this.handleChange}
           value={email}
+          label="Email"
           required
         />
         <Input
@@ -59,6 +60,7 @@ class Login extends React.Component {
           name="password"
           onChange={this.handleChange}
           value={password}
+          label="Senha"
           required
         />
         <button
