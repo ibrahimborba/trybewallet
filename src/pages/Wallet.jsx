@@ -88,7 +88,6 @@ class Wallet extends React.Component {
         <Header email={email} expenses={expenses} />
         <form>
           <Input
-            dataTestId="value-input"
             type="number"
             name="value"
             label="Valor"
@@ -97,7 +96,6 @@ class Wallet extends React.Component {
             required
           />
           <Input
-            dataTestId="description-input"
             type="text"
             name="description"
             label="Descrição"
@@ -108,7 +106,6 @@ class Wallet extends React.Component {
           <label htmlFor="currency">
             Moeda
             <select
-              data-testid="currency-input"
               name="currency"
               id="currency"
               onChange={this.handleChange}
@@ -121,7 +118,6 @@ class Wallet extends React.Component {
           <label htmlFor="method">
             Método
             <select
-              data-testid="method-input"
               name="method"
               id="method"
               onChange={this.handleChange}
@@ -134,7 +130,6 @@ class Wallet extends React.Component {
           <label htmlFor="tag">
             Categoria
             <select
-              data-testid="tag-input"
               name="tag"
               id="tag"
               onChange={this.handleChange}
@@ -207,14 +202,12 @@ class Wallet extends React.Component {
                 <td>Real</td>
                 <td>
                   <button
-                    data-testid="edit-btn"
                     type="button"
                     onClick={() => this.editExpense(expense.id)}
                   >
                     Editar
                   </button>
                   <button
-                    data-testid="delete-btn"
                     type="button"
                     onClick={() => this.delExpense(expense.id)}
                   >
