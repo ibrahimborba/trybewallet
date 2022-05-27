@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import StyledHeader from './StyledHeader';
 
 class Header extends Component {
   calcTotal = () => {
@@ -9,21 +10,22 @@ class Header extends Component {
       const sum = acc + convertValue;
       return sum;
     }, 0);
-    return Math.floor(totalValue * 100) / 100;
+    return (Math.floor(totalValue * 100) / 100).toFixed(2);
   };
 
   render() {
     const { email } = this.props;
     return (
-      <header>
+      <StyledHeader>
         <h1>
           trybe
           <b>wallet</b>
         </h1>
-        <h2>{ email }</h2>
-        <h2>{ this.calcTotal() }</h2>
-        <h2>BRL</h2>
-      </header>
+        <div>
+          <h2>{ email }</h2>
+          <h2><b>{ `R$ ${this.calcTotal()}` }</b></h2>
+        </div>
+      </StyledHeader>
     );
   }
 }
