@@ -23,7 +23,7 @@ const INITIAL_STATE = {
   id: 0,
   value: '',
   description: '',
-  currency: 'USD',
+  currency: 'BRL',
   method: 'Dinheiro',
   tag: 'Alimentação',
   editId: '',
@@ -76,6 +76,9 @@ class Wallet extends React.Component {
       id: expense.id,
       value: expense.value,
       description: expense.description,
+      currency: expense.currency,
+      method: expense.method,
+      tag: expense.tag,
       editId: expense.id,
     });
   };
@@ -95,7 +98,9 @@ class Wallet extends React.Component {
 
   render() {
     const { email, currencies, expenses } = this.props;
-    const { value, description, editId } = this.state;
+    const {
+      value, description, currency, method, tag, editId,
+    } = this.state;
     return (
       <section>
         <Header email={email} expenses={expenses} />
@@ -216,6 +221,7 @@ class Wallet extends React.Component {
                           name="currency"
                           id="currency"
                           onChange={this.handleChange}
+                          value={currency}
                         >
                           { currencies.map((currCode) => (
                             <option key={currCode} value={currCode}>{currCode}</option>
@@ -227,6 +233,7 @@ class Wallet extends React.Component {
                           name="method"
                           id="method"
                           onChange={this.handleChange}
+                          value={method}
                         >
                           <option value="Dinheiro">Dinheiro</option>
                           <option value="Cartão de crédito">Cartão de crédito</option>
@@ -239,6 +246,7 @@ class Wallet extends React.Component {
                           name="tag"
                           id="tag"
                           onChange={this.handleChange}
+                          value={tag}
                         >
                           <option value="Alimentação">Alimentação</option>
                           <option value="Lazer">Lazer</option>
