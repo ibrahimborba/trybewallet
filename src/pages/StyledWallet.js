@@ -115,3 +115,17 @@ export const StyledDelete = styled.button`
     color: #c62828 !important;
   }
 `;
+
+export const StyledEditExpense = styled.tr`
+  input {
+    width: 100px;
+  }
+
+  input, select {
+    height: 26px;
+    outline: 0;
+    background-color: white;
+    border-width: 0 0 2px;
+    border-color: black;
+  }
+`;

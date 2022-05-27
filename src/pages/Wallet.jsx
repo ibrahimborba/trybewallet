@@ -8,6 +8,7 @@ import {
   StyledWalletForm,
   StyledWalletTable,
   StyledDelete,
+  StyledEditExpense,
 } from './StyledWallet';
 import {
   actionFetchCurrCodes,
@@ -23,7 +24,7 @@ const INITIAL_STATE = {
   currency: 'USD',
   method: 'Dinheiro',
   tag: 'Alimentação',
-  newOrEdit: 'new',
+  editId: '',
 };
 
 class Wallet extends React.Component {
@@ -61,15 +62,20 @@ class Wallet extends React.Component {
     return nameSplited[0];
   };
 
-  calcExchange = (value, rate) => Math.round((value * rate) * 100) / 100;
+  calcExchange = (value, rate) => (Math.round((value * rate) * 100) / 100).toFixed(2);
 
   delExpense = (id) => {
     const { dispatch } = this.props;
     dispatch(actionDelExpense(id));
   };
 
-  editExpense = (id) => {
-    this.setState({ newOrEdit: 'edit', id });
+  editExpense = (expense) => {
+    this.setState({
+      id: expense.id,
+      value: expense.value,
+      description: expense.description,
+      editId: expense.id,
+    });
   };
 
   saveEditedExpense = (event) => {
@@ -87,7 +93,7 @@ class Wallet extends React.Component {
 
   render() {
     const { email, currencies, expenses } = this.props;
-    const { value, description, newOrEdit } = this.state;
+    const { value, description, editId } = this.state;
     return (
       <section>
         <Header email={email} expenses={expenses} />
@@ -96,6 +102,7 @@ class Wallet extends React.Component {
             type="number"
             name="value"
             label="Valor"
+            placeholder="0.00"
             onChange={this.handleChange}
             value={value}
             required
@@ -104,6 +111,7 @@ class Wallet extends React.Component {
             type="text"
             name="description"
             label="Descrição"
+            placeholder="Descrição do gasto"
             onChange={this.handleChange}
             value={description}
             required
@@ -146,25 +154,12 @@ class Wallet extends React.Component {
               <option value="Saúde">Saúde</option>
             </select>
           </label>
-          {
-            newOrEdit === 'new'
-              ? (
-                <button
-                  type="submit"
-                  onClick={this.saveNewExpense}
-                >
-                  Adicionar despesa
-                </button>
-              )
-              : (
-                <button
-                  type="submit"
-                  onClick={this.saveEditedExpense}
-                >
-                  Editar despesa
-                </button>
-              )
-          }
+          <button
+            type="submit"
+            onClick={this.saveNewExpense}
+          >
+            Adicionar despesa
+          </button>
         </StyledWalletForm>
         <div style={{ overflowX: 'auto' }}>
           <StyledWalletTable>
@@ -178,53 +173,144 @@ class Wallet extends React.Component {
                 <th>Categoria</th>
                 <th>Câmbio</th>
                 <th>Valor convertido</th>
-                <th>Moeda de conversão</th>
                 <th>Excluir</th>
               </tr>
             </thead>
             <tbody>
               { expenses.map((expense) => (
-                <tr key={expense.id}>
-                  <td>
-                    <button
-                      type="button"
-                      onClick={() => this.editExpense(expense.id)}
-                    >
-                      Editar
-                    </button>
-                  </td>
-                  <td>{ parseFloat(expense.value).toFixed(2) }</td>
-                  <td>{ expense.description }</td>
-                  <td>
-                    {this.getCurrencyName(
-                      expense.exchangeRates[expense.currency].name,
-                    )}
-                  </td>
-                  <td>{ expense.method }</td>
-                  <td>{ expense.tag }</td>
-                  <td>
-                    { parseFloat(Math.round(
-                      expense.exchangeRates[expense.currency].ask * 100,
-                    ) / 100).toFixed(2) }
-                  </td>
-                  <td>
-                    <b style={{ fontWeight: '600' }}>
-                      {`R$ ${this.calcExchange(
-                        expense.value,
-                        expense.exchangeRates[expense.currency].ask,
-                      )}`}
-                    </b>
-                  </td>
-                  <td>Real</td>
-                  <td>
-                    <StyledDelete
-                      type="button"
-                      onClick={() => this.delExpense(expense.id)}
-                    >
-                      Excluir
-                    </StyledDelete>
-                  </td>
-                </tr>
+                expense.id === editId
+                  ? (
+                    <StyledEditExpense key={expense.id}>
+                      <td>
+                        <button
+                          type="submit"
+                          onClick={this.saveEditedExpense}
+                        >
+                          Salvar
+                        </button>
+                      </td>
+                      <td>
+                        <Input
+                          type="number"
+                          name="value"
+                          placeholder={parseFloat(expense.value).toFixed(2)}
+                          onChange={this.handleChange}
+                          value={value}
+                          required
+                        />
+                      </td>
+                      <td>
+                        <Input
+                          type="text"
+                          name="description"
+                          placeholder={expense.description}
+                          onChange={this.handleChange}
+                          value={description}
+                          required
+                        />
+                      </td>
+                      <td>
+                        <select
+                          name="currency"
+                          id="currency"
+                          onChange={this.handleChange}
+                        >
+                          { currencies.map((currCode) => (
+                            <option key={currCode} value={currCode}>{currCode}</option>
+                          ))}
+                        </select>
+                      </td>
+                      <td>
+                        <select
+                          name="method"
+                          id="method"
+                          onChange={this.handleChange}
+                        >
+                          <option value="Dinheiro">Dinheiro</option>
+                          <option value="Cartão de crédito">Cartão de crédito</option>
+                          <option value="Cartão de débito">Cartão de débito</option>
+                        </select>
+
+                      </td>
+                      <td>
+                        <select
+                          name="tag"
+                          id="tag"
+                          onChange={this.handleChange}
+                        >
+                          <option value="Alimentação">Alimentação</option>
+                          <option value="Lazer">Lazer</option>
+                          <option value="Trabalho">Trabalho</option>
+                          <option value="Transporte">Transporte</option>
+                          <option value="Saúde">Saúde</option>
+                        </select>
+
+                      </td>
+                      <td>
+                        { parseFloat(Math.round(
+                          expense.exchangeRates[expense.currency].ask * 100,
+                        ) / 100).toFixed(2) }
+                      </td>
+                      <td>
+                        <b style={{ fontWeight: '600' }}>
+                          {`R$ ${this.calcExchange(
+                            expense.value,
+                            expense.exchangeRates[expense.currency].ask,
+                          )}`}
+                        </b>
+                      </td>
+                      <td>
+                        <StyledDelete
+                          type="button"
+                          onClick={() => this.delExpense(expense.id)}
+                        >
+                          Excluir
+                        </StyledDelete>
+                      </td>
+                    </StyledEditExpense>
+                  ) : (
+                    <tr key={expense.id}>
+                      <td>
+                        <button
+                          type="button"
+                          onClick={() => this.editExpense(expense)}
+                        >
+                          Editar
+                        </button>
+                      </td>
+                      <td>{ parseFloat(expense.value).toFixed(2) }</td>
+                      <td>{ expense.description }</td>
+                      <td>
+                        {this.getCurrencyName(
+                          expense.exchangeRates[expense.currency].name,
+                        )}
+                      </td>
+                      <td>{ expense.method }</td>
+                      <td>{ expense.tag }</td>
+                      <td>
+                        { parseFloat(Math.round(
+                          expense.exchangeRates[expense.currency].ask * 100,
+                        ) / 100).toFixed(2) }
+                      </td>
+                      <td>
+                        <b style={{ fontWeight: '600' }}>
+                          {`R$ ${this.calcExchange(
+                            expense.value,
+                            expense.exchangeRates[expense.currency].ask,
+                          )}`}
+                        </b>
+                      </td>
+                      <td>
+                        <StyledDelete
+                          type="button"
+                          onClick={() => this.delExpense(expense.id)}
+                        >
+                          Excluir
+                        </StyledDelete>
+                      </td>
+                    </tr>
+                  )
+
               ))}
             </tbody>
           </StyledWalletTable>
