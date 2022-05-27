@@ -4,11 +4,12 @@ export const StyledWalletForm = styled.form`
   width: 90%;
   height: auto;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 30px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-x:auto;
 
   label {
     display: flex;
@@ -22,6 +23,7 @@ export const StyledWalletForm = styled.form`
     outline: 0;
     border-width: 0 0 2px;
     border-color: black;
+    margin-right: 20px;
   }
 
   select {
@@ -30,10 +32,11 @@ export const StyledWalletForm = styled.form`
     background-color: white;
     border-width: 0 0 2px;
     border-color: black;
+    margin-right: 20px;
   }
 
   button {
-    height: 30px;
+    height: auto;
     background-color: white;
     border: 2px solid black;
     border-radius: 5px;
@@ -50,12 +53,28 @@ export const StyledWalletForm = styled.form`
     background-color: black;
     color: white;
   }
+
+  ::-webkit-scrollbar{
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: lightgray;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: gray;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: black;
+  }
 `;
 
 export const StyledWalletTable = styled.table`
   width: 90%;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 30px;
   padding: 10px;
   text-align: left;
 
@@ -67,7 +86,6 @@ export const StyledWalletTable = styled.table`
   }
 
   button {
-    margin: 0 auto;
     margin-top: 5px;
     width: 70px;
     height: 30px;
