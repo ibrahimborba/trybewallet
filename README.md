@@ -8,8 +8,10 @@ This is a [Trybe](https://www.betrybe.com/) project developed as part of the Fro
 - [Summary](#summary)
 - [Context](#context)
 - [Technologies Used](#technologies-used)
+- [Notes](#technologies-used)
+  - [Git and Commits](#git-and-commit)
+  - [Further Improvements](#further-improvements)
 - [Lint](#lint)
-- [Preview](#preview)
 
 ---
 
@@ -28,6 +30,20 @@ This project used the following technologies and features:
   * __Redux__ | [State Management in Redux](https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/)
   * __Testing Library__ | [React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library), [React Redux Testing Library](https://testing-library.com/docs/example-react-redux/)
   * __CSS__ | [Styled Components](https://styled-components.com/) 
+
+---
+
+# Notes
+### Git and Commit
+- There are only two branches since this is a solo project. One is the *main*, with production ready features. And the other one is *project_refactor*, where I improve the code and add new features.
+- This project used the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) with some types from [Angular convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
+
+
+### Further Improvements
+- Make it Mobile First
+- Increase test coverage
+- Add Design Pattern for API requests
+- Break Wallet Page form, table and table rows into components 
 
 ---
 
