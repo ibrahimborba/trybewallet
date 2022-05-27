@@ -107,3 +107,11 @@ export const StyledWalletTable = styled.table`
     color: white;
   }
 `;
+
+export const StyledDelete = styled.button`
+  :hover {
+    background-color: white !important;
+    border: 2px solid #c62828 !important;
+    color: #c62828 !important;
+  }
+`;

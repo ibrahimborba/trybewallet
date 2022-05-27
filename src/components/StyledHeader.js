@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledHeader = styled.header`
+export const StyledHeader = styled.header`
   width: 90%;
   height: 60px;
   margin: 0 auto;
@@ -17,8 +17,19 @@ const StyledHeader = styled.header`
   h2 {
     margin-right: 20px;
     font-size: 16px;
+
+    b {
+      margin-left: 10px;
+      border-bottom: 3px solid #ffc400;
+    }
   }
   
 `;
 
-export default StyledHeader;
+export const StyledTotal = styled.button`
+  :hover {
+    background-color: white !important;
+    border: 2px solid #c62828 !important;
+    color: #c62828 !important;
+  }
+`;

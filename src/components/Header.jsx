@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import StyledHeader from './StyledHeader';
+import { StyledHeader } from './StyledHeader';
 
 class Header extends Component {
   calcTotal = () => {
@@ -23,7 +23,10 @@ class Header extends Component {
         </h1>
         <div>
           <h2>{ email }</h2>
-          <h2><b>{ `R$ ${this.calcTotal()}` }</b></h2>
+          <h2>
+            Total
+            <b>{ `R$ ${this.calcTotal()}` }</b>
+          </h2>
         </div>
       </StyledHeader>
     );

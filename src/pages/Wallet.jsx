@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Input from '../components/Input';
-import { StyledWalletForm, StyledWalletTable } from './StyledWallet';
+import {
+  StyledWalletForm,
+  StyledWalletTable,
+  StyledDelete,
+} from './StyledWallet';
 import {
   actionFetchCurrCodes,
   actionFetchCurrRate,
@@ -204,19 +208,21 @@ class Wallet extends React.Component {
                     ) / 100).toFixed(2) }
                   </td>
                   <td>
-                    {this.calcExchange(
-                      expense.value,
-                      expense.exchangeRates[expense.currency].ask,
-                    )}
+                    <b style={{ fontWeight: '600' }}>
+                      {`R$ ${this.calcExchange(
+                        expense.value,
+                        expense.exchangeRates[expense.currency].ask,
+                      )}`}
+                    </b>
                   </td>
                   <td>Real</td>
                   <td>
-                    <button
+                    <StyledDelete
                       type="button"
                       onClick={() => this.delExpense(expense.id)}
                     >
                       Excluir
-                    </button>
+                    </StyledDelete>
                   </td>
                 </tr>
               ))}
