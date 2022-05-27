@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Input from '../components/Input';
 import { actionUserEmail } from '../store/actions';
-import StyledForm from './StyledForm';
+import StyledLogin from './StyledLogin';
 
 class Login extends React.Component {
   constructor() {
@@ -47,7 +47,11 @@ class Login extends React.Component {
   render() {
     const { email, password, disabled } = this.state;
     return (
-      <StyledForm onSubmit={this.handleSubmit}>
+      <StyledLogin onSubmit={this.handleSubmit}>
+        <h1>
+          trybe
+          <b>wallet</b>
+        </h1>
         <Input
           type="email"
           name="email"
@@ -72,7 +76,7 @@ class Login extends React.Component {
         >
           Entrar
         </button>
-      </StyledForm>
+      </StyledLogin>
     );
   }
 }

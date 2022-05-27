@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const StyledForm = styled.form`
+const StyledLogin = styled.form`
   width: 350px;
   height: auto;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 5%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -12,6 +12,10 @@ const StyledForm = styled.form`
   align-items: center;
   border: 2px solid black;
   border-radius: 10px;
+
+  h1 {
+    margin: 36px;
+  }
 
   label {
     display: flex;
@@ -32,6 +36,7 @@ const StyledForm = styled.form`
     width: 50%;
     height: 30px;
     margin-top: 20px;
+    margin-bottom: 20px;
     background-color: white;
     border: 2px solid black;
     border-radius: 5px;
@@ -40,11 +45,11 @@ const StyledForm = styled.form`
     transition: 0.2s;
   }
 
-  button:hover {
+  button:hover:enabled {
     cursor: pointer;
     background-color: black;
     color: white;
   }
 `;
 
-export default StyledForm;
+export default StyledLogin;
