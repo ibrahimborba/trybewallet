@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Login from './pages/Login';
 import Wallet from './pages/Wallet';
 
@@ -19,6 +19,8 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
+    color:${(props) => props.palette.secondaryColor}
+    background-color:${(props) => props.palette.mainColor}
   }
 
   ol, ul {
@@ -31,16 +33,42 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-function App() {
-  return (
-    <div>
-      <GlobalStyle />
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/carteira" component={Wallet} />
-      </Switch>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      // theme: 'light',
+      palette: {
+        mainColor: '#fafafa',
+        secondaryColor: '#212121',
+        accent: '#ffc400',
+        attention: '#c62828',
+      },
+    };
+  }
+
+  render() {
+    const { palette } = this.state;
+    return (
+      <main>
+        <ThemeProvider theme={palette}>
+          <GlobalStyle palette={palette} />
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route
+              exact
+              path="/carteira"
+              render={(props) => (
+                <Wallet
+                  {...props}
+                />
+              )}
+            />
+          </Switch>
+        </ThemeProvider>
+      </main>
+    );
+  }
 }
 
 export default App;

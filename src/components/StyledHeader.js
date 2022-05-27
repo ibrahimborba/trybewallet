@@ -20,7 +20,7 @@ export const StyledHeader = styled.header`
 
     b {
       margin-left: 10px;
-      border-bottom: 3px solid #ffc400;
+      border-bottom: 3px solid ${(props) => props.theme.accent};
     }
   }
   
@@ -28,8 +28,8 @@ export const StyledHeader = styled.header`
 
 export const StyledTotal = styled.button`
   :hover {
-    background-color: white !important;
-    border: 2px solid #c62828 !important;
-    color: #c62828 !important;
+    color: ${(props) => props.theme.attention} !important;
+    background-color: ${(props) => props.theme.mainColor} !important;
+    border: 2px solid ${(props) => props.theme.attention} !important;
   }
 `;
