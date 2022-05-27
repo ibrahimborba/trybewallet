@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledLogin = styled.form`
+const StyledForm = styled.form`
   width: 350px;
   height: auto;
   margin: 0 auto;
@@ -47,4 +47,4 @@ const StyledLogin = styled.form`
   }
 `;
 
-export default StyledLogin;
+export default StyledForm;

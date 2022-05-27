@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Input from '../components/Input';
+import { StyledWalletForm, StyledWalletTable } from './StyledWallet';
 import {
   actionFetchCurrCodes,
   actionFetchCurrRate,
@@ -86,7 +87,7 @@ class Wallet extends React.Component {
     return (
       <section>
         <Header email={email} expenses={expenses} />
-        <form>
+        <StyledWalletForm>
           <Input
             type="number"
             name="value"
@@ -161,8 +162,8 @@ class Wallet extends React.Component {
               )
           }
 
-        </form>
-        <table>
+        </StyledWalletForm>
+        <StyledWalletTable>
           <thead>
             <tr>
               <th>Descrição</th>
@@ -217,7 +218,7 @@ class Wallet extends React.Component {
               </tr>
             ))}
           </tbody>
-        </table>
+        </StyledWalletTable>
       </section>
     );
   }
