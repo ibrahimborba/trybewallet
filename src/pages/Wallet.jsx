@@ -4,12 +4,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Input from '../components/Input';
+
 import {
   StyledWalletForm,
   StyledWalletTable,
   StyledDelete,
   StyledEditExpense,
 } from './StyledWallet';
+
 import {
   actionFetchCurrCodes,
   actionFetchCurrRate,

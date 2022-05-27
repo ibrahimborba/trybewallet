@@ -120,7 +120,7 @@ export const StyledEditExpense = styled.tr`
   input {
     width: 100px;
   }
-
+  
   input, select {
     height: 26px;
     outline: 0;
