@@ -89,7 +89,7 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route path="/trybewallet" component={Login} />
+            <Route path="/" component={Login} />
           </Switch>
         </ThemeProvider>
       </main>
