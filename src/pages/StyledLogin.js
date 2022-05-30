@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledLogin = styled.form`
-  width: 350px;
+  width: 300px;
   height: auto;
   margin: 0 auto;
   margin-top: 5%;
@@ -11,10 +11,10 @@ const StyledLogin = styled.form`
   justify-content: center;
   align-items: center;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 30px;
 
   h1 {
-    margin: 36px;
+    margin: 40px;
   }
 
   label {

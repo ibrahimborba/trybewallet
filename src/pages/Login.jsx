@@ -11,7 +11,7 @@ class Login extends React.Component {
 
     this.state = {
       email: '',
-      password: '',
+      name: '',
       disabled: true,
     };
   }
@@ -24,12 +24,11 @@ class Login extends React.Component {
   };
 
   verifyForm = () => {
-    const { email, password } = this.state;
-    const MIN_PASS_LENGTH = 6;
+    const { email, name } = this.state;
+    const MIN_PASS_LENGTH = 1;
     const validators = [
-      password.length >= MIN_PASS_LENGTH,
-      email.includes('@'),
-      email.includes('.com'),
+      name.length >= MIN_PASS_LENGTH,
+      /^\S+@\S+\.\S+$/.test(email),
     ];
     this.setState({
       disabled: !validators.every((validator) => validator),
@@ -39,13 +38,13 @@ class Login extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { history, dispatch } = this.props;
-    const { email } = this.state;
-    dispatch(actionUserEmail(email));
+    const { name } = this.state;
+    dispatch(actionUserEmail(name));
     history.push('/carteira');
   };
 
   render() {
-    const { email, password, disabled } = this.state;
+    const { email, name, disabled } = this.state;
     return (
       <StyledLogin onSubmit={this.handleSubmit}>
         <h1>
@@ -53,21 +52,21 @@ class Login extends React.Component {
           <b>wallet</b>
         </h1>
         <Input
+          type="text"
+          name="name"
+          onChange={this.handleChange}
+          value={name}
+          label="Nome"
+          placeholder="Nome"
+          required
+        />
+        <Input
           type="email"
           name="email"
           onChange={this.handleChange}
           value={email}
           label="Email"
           placeholder="usuario@email.com"
-          required
-        />
-        <Input
-          type="text"
-          name="password"
-          onChange={this.handleChange}
-          value={password}
-          label="Senha"
-          placeholder="senha"
           required
         />
         <button
