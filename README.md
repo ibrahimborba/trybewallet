@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Welcome to TrybeWallet project!
+This is a [Trybe](https://www.betrybe.com/) project developed as part of the Frontend Module to exercise React and Redux.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# Summary
+- [Welcome to TrybeWallet project!](#welcome-to-trybewallet-project!)
+- [Summary](#summary)
+- [Context](#context)
+- [Technologies Used](#technologies-used)
+- [Notes](#technologies-used)
+  - [Git and Commits](#git-and-commit)
+  - [Further Improvements](#further-improvements)
+- [Lint](#lint)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+# Context
+This project is a __Finance App__ that allows the user to control their expenses through:
+ * __Adding__ a new expense
+ * __Edit__ existing expenses
+ * __Delete__ unwanted expenses
+ * __View__ the total amount of expenses
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Technologies Used
+This project used the following technologies and features:
+  * __React__ | [React Router](https://blog.pshrmn.com/simple-react-router-v4-tutorial/), [React Lifecycle](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/), [State and Props](https://reactjs.org/docs/thinking-in-react.html), [Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
+  * __Redux__ | [State Management in Redux](https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/)
+  * __Testing Library__ | [React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library), [React Redux Testing Library](https://testing-library.com/docs/example-react-redux/)
+  * __CSS__ | [Styled Components](https://styled-components.com/) 
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Notes
+### Git and Commit
+- There are only two branches since this is a solo project. One is the *main*, with production ready features. And the other one is *project_refactor*, where I improve the code and add new features.
+- This project used the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) with some types from [Angular convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Further Improvements
+- Make it Mobile First
+- Increase test coverage
+- Add Design Pattern for API requests
+- Break Wallet Page form, table and table rows into components 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Lint
+The project was developed following the Clean Code standards specified by Airbnb's [ESLint](https://www.npmjs.com/package/eslint-config-airbnb) and [StyleLint](https://www.npmjs.com/package/stylelint-config-airbnb) rules, since it's one of the most implemented lint packages.
 
-### `npm run eject`
+Some minor configuration changes were made to better fit [Trybe's Lint](https://github.com/betrybe/eslint-config-trybe), because the project was initially developed following said rules.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---

@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -19,6 +20,7 @@
         "react"
     ],
     "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/prefer-stateless-function": "off",
         "react/jsx-props-no-spreading": "off"
     }
