@@ -79,10 +79,10 @@ class App extends React.Component {
         <ThemeProvider theme={palette}>
           <GlobalStyle palette={palette} />
           <Switch>
-            <Route exact path="https://ibrahimborba.github.io/trybewallet/" component={Login} />
+            <Route exact path="/" component={Login} />
             <Route
               exact
-              path="https://ibrahimborba.github.io/trybewallet/carteira"
+              path="https://ibrahimborba.github.io/trybewallet/"
               render={(props) => (
                 <Wallet
                   {...props}
