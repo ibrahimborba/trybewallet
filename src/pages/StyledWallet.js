@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledSection = styled.section`
+export const StyledMain = styled.section`
   height: 100vh;
   background-color: ${(props) => props.theme.mainColor};
   color: ${(props) => props.theme.secondaryColor};
@@ -147,4 +147,18 @@ export const StyledEditExpense = styled.tr`
     border-width: 0 0 2px;
     border-color: ${(props) => props.theme.secondaryColor};
   }
+`;
+
+export const StyledFooter = styled.footer`
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  margin-left: 5%;
+  height: 50px;
+  width: 90%;
+  background-color: ${(props) => props.theme.mainColor};
+  border-top: 1px solid ${(props) => props.theme.secondaryColor};
 `;

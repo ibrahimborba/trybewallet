@@ -6,11 +6,12 @@ import Header from '../components/Header';
 import Input from '../components/Input';
 
 import {
-  StyledSection,
+  StyledMain,
   StyledWalletForm,
   StyledWalletTable,
   StyledDelete,
   StyledEditExpense,
+  StyledFooter,
 } from './StyledWallet';
 
 import {
@@ -105,7 +106,7 @@ class Wallet extends React.Component {
       value, description, currency, method, tag, editId,
     } = this.state;
     return (
-      <StyledSection>
+      <StyledMain>
         <Header
           name={email}
           expenses={expenses}
@@ -333,7 +334,14 @@ class Wallet extends React.Component {
             </tbody>
           </StyledWalletTable>
         </div>
-      </StyledSection>
+        <StyledFooter>
+          <p>
+            Um projeto Trybe desenvolvido por Ibrahim Borba
+            <span>&copy;</span>
+            , 2022
+          </p>
+        </StyledFooter>
+      </StyledMain>
     );
   }
 }
