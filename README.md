@@ -40,10 +40,11 @@ This project used the following technologies and features:
 
 
 ### Further Improvements
-- Make it Mobile First
 - Increase test coverage
-- Add Design Pattern for API requests
-- Break Wallet Page form, table and table rows into components 
+- Make it *Mobile First*
+- Add *Design Pattern* for API requests
+- Break *Wallet Page* form, table and table rows into components 
+- Optmize *Styled Components* and dark/light mode structure
 
 ---
 
