@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyledHeader } from './StyledHeader';
+import { StyledHeader, StyledToogle } from './StyledHeader';
 
 class Header extends Component {
   calcTotal = () => {
@@ -14,7 +14,7 @@ class Header extends Component {
   };
 
   render() {
-    const { email } = this.props;
+    const { name, changeTheme, currentTheme } = this.props;
     return (
       <StyledHeader>
         <h1>
@@ -22,11 +22,19 @@ class Header extends Component {
           <b>wallet</b>
         </h1>
         <div>
-          <h2>{ email }</h2>
+          <h2>{ name }</h2>
           <h2>
             Total
             <b>{ `R$ ${this.calcTotal()}` }</b>
           </h2>
+          <StyledToogle htmlFor="themes" className="switch">
+            <input id="themes" type="checkbox" onClick={changeTheme} />
+            {
+              currentTheme === 'light'
+                ? <span className="slider round material-icons">light_mode</span>
+                : <span className="slider round material-icons">dark_mode</span>
+            }
+          </StyledToogle>
         </div>
       </StyledHeader>
     );
@@ -34,7 +42,9 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  email: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  currentTheme: PropTypes.string.isRequired,
+  changeTheme: PropTypes.func.isRequired,
   expenses: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
 };
 

@@ -37,7 +37,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      // theme: 'light',
+      theme: 'light',
       palette: {
         mainColor: '#fafafa',
         secondaryColor: '#212121',
@@ -47,8 +47,33 @@ class App extends React.Component {
     };
   }
 
+  changeTheme = () => {
+    const { theme } = this.state;
+    if (theme === 'light') {
+      this.setState({
+        theme: 'dark',
+        palette: {
+          mainColor: '#212121',
+          secondaryColor: '#fafafa',
+          accent: '#ffc400',
+          attention: '#c62828',
+        },
+      });
+    } else {
+      this.setState({
+        theme: 'light',
+        palette: {
+          mainColor: '#fafafa',
+          secondaryColor: '#212121',
+          accent: '#ffc400',
+          attention: '#e53935',
+        },
+      });
+    }
+  };
+
   render() {
-    const { palette } = this.state;
+    const { palette, theme } = this.state;
     return (
       <main>
         <ThemeProvider theme={palette}>
@@ -61,6 +86,8 @@ class App extends React.Component {
               render={(props) => (
                 <Wallet
                   {...props}
+                  currentTheme={theme}
+                  changeTheme={this.changeTheme}
                 />
               )}
             />

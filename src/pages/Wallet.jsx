@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Input from '../components/Input';
 
 import {
+  StyledSection,
   StyledWalletForm,
   StyledWalletTable,
   StyledDelete,
@@ -21,8 +22,8 @@ import {
 
 const INITIAL_STATE = {
   id: 0,
-  value: '',
-  description: '',
+  value: parseFloat(0).toFixed(2),
+  description: 'Descrição do gasto',
   currency: 'BRL',
   method: 'Dinheiro',
   tag: 'Alimentação',
@@ -97,13 +98,20 @@ class Wallet extends React.Component {
   };
 
   render() {
-    const { email, currencies, expenses } = this.props;
+    const {
+      email, currencies, expenses, changeTheme, currentTheme,
+    } = this.props;
     const {
       value, description, currency, method, tag, editId,
     } = this.state;
     return (
-      <section>
-        <Header email={email} expenses={expenses} />
+      <StyledSection>
+        <Header
+          name={email}
+          expenses={expenses}
+          changeTheme={changeTheme}
+          currentTheme={currentTheme}
+        />
         <StyledWalletForm>
           <Input
             type="number"
@@ -325,7 +333,7 @@ class Wallet extends React.Component {
             </tbody>
           </StyledWalletTable>
         </div>
-      </section>
+      </StyledSection>
     );
   }
 }
@@ -340,6 +348,8 @@ Wallet.propTypes = {
   email: PropTypes.string.isRequired,
   currencies: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   dispatch: PropTypes.func.isRequired,
+  changeTheme: PropTypes.func.isRequired,
+  currentTheme: PropTypes.string.isRequired,
   expenses: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
 };
 

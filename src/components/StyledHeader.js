@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
+  background-color: ${(props) => props.theme.mainColor};
+  color: ${(props) => props.theme.secondaryColor};
   width: 90%;
   height: 60px;
   margin: 0 auto;
@@ -31,5 +33,27 @@ export const StyledTotal = styled.button`
     color: ${(props) => props.theme.attention} !important;
     background-color: ${(props) => props.theme.mainColor} !important;
     border: 2px solid ${(props) => props.theme.attention} !important;
+  }
+`;
+
+export const StyledToogle = styled.label`
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  span {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: ${(props) => props.theme.secondaryColor};
+    color: ${(props) => props.theme.mainColor};
+    transition: .4s;
   }
 `;
