@@ -12,6 +12,7 @@ This is a [Trybe](https://www.betrybe.com/) project developed as part of the Fro
   - [Git and Commits](#git-and-commit)
   - [Further Improvements](#further-improvements)
 - [Lint](#lint)
+- [Preview](#preview)
 
 ---
 
@@ -54,3 +55,6 @@ The project was developed following the Clean Code standards specified by Airbnb
 Some minor configuration changes were made to better fit [Trybe's Lint](https://github.com/betrybe/eslint-config-trybe), because the project was initially developed following said rules.
 
 ---
+
+# Preview
+To check and interact a project preview [click here](https://ibrahimborba.github.io/trybewallet/).
