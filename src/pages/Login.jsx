@@ -40,7 +40,7 @@ class Login extends React.Component {
     const { history, dispatch } = this.props;
     const { name } = this.state;
     dispatch(actionUserEmail(name));
-    history.push('/carteira');
+    history.push('https://ibrahimborba.github.io/trybewallet/carteira');
   };
 
   render() {
