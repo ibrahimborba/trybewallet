@@ -49,11 +49,12 @@ export const StyledToogle = styled.label`
   }
 
   span {
-    padding: 5px;
+    padding: 4px;
     cursor: pointer;
     border-radius: 50%;
-    background-color: ${(props) => props.theme.secondaryColor};
-    color: ${(props) => props.theme.mainColor};
+    border: 2px solid ${(props) => props.theme.secondaryColor};
+    background-color: ${(props) => props.theme.mainColor};
+    color: ${(props) => props.theme.secondaryColor};
     transition: .4s;
   }
 `;
