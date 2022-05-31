@@ -39,7 +39,6 @@ This project used the following technologies and features:
 - There are only two branches since this is a solo project. One is the *main*, with production ready features. And the other one is *project_refactor*, where I improve the code and add new features.
 - This project used the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) with some types from [Angular convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
 
-
 ### Further Improvements
 - Increase test coverage
 - Make it *Mobile First*
@@ -57,4 +56,9 @@ Some minor configuration changes were made to better fit [Trybe's Lint](https://
 ---
 
 # Preview
-To check and interact a project preview [click here](https://ibrahimborba.github.io/trybewallet/).
+To check and interact with the project preview at GitHub Pages [click here](https://ibrahimborba.github.io/trybewallet/).
+
+
+| Light Mode | Dark Mode |
+| --- | --- |
+| <img src="./images/Light.png" width="400"> | <img src="./images/Dark.png" width="400"> |
