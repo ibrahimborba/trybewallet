@@ -161,4 +161,5 @@ export const StyledFooter = styled.footer`
   width: 90%;
   background-color: ${(props) => props.theme.mainColor};
   border-top: 1px solid ${(props) => props.theme.secondaryColor};
+
 `;
