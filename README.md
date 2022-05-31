@@ -35,9 +35,10 @@ This project used the following technologies and features:
 ---
 
 # Notes
-### Git and Commit
+### Git, GitHub and Commit History
 - There are only two branches since this is a solo project. One is the *main*, with production ready features. And the other one is *project_refactor*, where I improve the code and add new features.
 - This project used the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) with some types from [Angular convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
+- The deploy was made using [GitHub Pages](https://www.freecodecamp.org/news/deploy-a-react-app-to-github-pages/), being the host recommended by Trybe in other projects, it's the one I had more familiarity with.
 
 ### Further Improvements
 - Increase test coverage
@@ -56,7 +57,7 @@ Some minor configuration changes were made to better fit [Trybe's Lint](https://
 ---
 
 # Preview
-To check and interact with the project preview at GitHub Pages [click here](https://ibrahimborba.github.io/trybewallet/).
+To see and interact with the project preview [click here](https://ibrahimborba.github.io/trybewallet/).
 
 
 | Light Mode | Dark Mode |
