@@ -87,6 +87,7 @@ class Wallet extends React.Component {
 
   saveEditedExpense = (event) => {
     event.preventDefault();
+
     const { dispatch } = this.props;
     const {
       value, description, currency, method, tag, id,
