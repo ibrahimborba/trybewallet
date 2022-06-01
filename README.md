@@ -8,6 +8,7 @@ This is a [Trybe](https://www.betrybe.com/) project developed as part of the Fro
 - [Summary](#summary)
 - [Context](#context)
 - [Technologies Used](#technologies-used)
+- [Installing, running and testing the app](#installing-running-and-testing-the-app)
 - [Notes](#technologies-used)
   - [Git and Commits](#git-and-commit)
   - [Further Improvements](#further-improvements)
@@ -32,6 +33,23 @@ This project used the following technologies and features:
   * __Testing Library__ | [React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library), [React Redux Testing Library](https://testing-library.com/docs/example-react-redux/)
   * __CSS__ | [Styled Components](https://styled-components.com/) 
 
+---
+
+# Installing, running and testing the app
+### Install dependencies
+```
+cd trybewallet
+npm install
+```
+### Run the application
+```
+cd trybewallet
+npm start
+```
+### Run tests
+```
+npm test
+```
 ---
 
 # Notes
